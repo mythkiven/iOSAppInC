@@ -1,7 +1,7 @@
 
 用纯 C 实现了构建一个简单的 iOS App。
 
-主要包含3个文件：
+包含3个C文件：
 ```
 main.c：实现oc中main.m的功能，设置自动释放池，调用UIApplicationMain函数；
 MKAppDelegate.c: 实现oc中AppDelegate.m的功能，设置window,controller;
@@ -9,7 +9,7 @@ MKView.c: 类似oc中一个纯代码的view，绘制简单的视图。
 ```
 实现的效果如下图：
 
-
+![](https://github.com/mythkiven/iOSAppInC/raw/master/pureC.png)
 
 其中需要注意的几点简单说下：
 
@@ -20,10 +20,10 @@ MKView.c: 类似oc中一个纯代码的view，绘制简单的视图。
 用 __attribute__((constructor)) 修饰以保证函数在 main 之前执行。
 ```
 
-###  2、@selector 在纯 C 环境用不了怎么办？
+###  2、@selector 在纯 C 环境用不了？
 
 ```
-实例：
+示例：
 [tableView cellForRowAtIndexPath:indexPath];
 
 在 OC 环境中写法:
@@ -95,4 +95,3 @@ SDK: iOS 12.4
 
 其他没啥特别的了，绘图用 CGContextRef，objc_msgSend应该都比较熟悉，代码本身也比较简单。。
 
-注解了一部分代码，不太熟悉消息机制调用的同学可以对照着看下。
